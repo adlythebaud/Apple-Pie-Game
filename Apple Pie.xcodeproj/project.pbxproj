@@ -12,6 +12,7 @@
 		F8595D931F0FBBCB0030934B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8595D911F0FBBCB0030934B /* Main.storyboard */; };
 		F8595D951F0FBBCB0030934B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8595D941F0FBBCB0030934B /* Assets.xcassets */; };
 		F8595D981F0FBBCB0030934B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8595D961F0FBBCB0030934B /* LaunchScreen.storyboard */; };
+		F88C434A1F1168DF00C8994B /* game.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88C43491F1168DF00C8994B /* game.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		F8595D941F0FBBCB0030934B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F8595D971F0FBBCB0030934B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F8595D991F0FBBCB0030934B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F88C43491F1168DF00C8994B /* game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = game.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				F8595D8D1F0FBBCB0030934B /* AppDelegate.swift */,
 				F8595D8F1F0FBBCB0030934B /* ViewController.swift */,
+				F88C43491F1168DF00C8994B /* game.swift */,
 				F8595D911F0FBBCB0030934B /* Main.storyboard */,
 				F8595D941F0FBBCB0030934B /* Assets.xcassets */,
 				F8595D961F0FBBCB0030934B /* LaunchScreen.storyboard */,
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F88C434A1F1168DF00C8994B /* game.swift in Sources */,
 				F8595D901F0FBBCB0030934B /* ViewController.swift in Sources */,
 				F8595D8E1F0FBBCB0030934B /* AppDelegate.swift in Sources */,
 			);
@@ -302,6 +306,7 @@
 				F8595D9E1F0FBBCB0030934B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
