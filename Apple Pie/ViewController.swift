@@ -29,7 +29,7 @@ class ViewController: UIViewController {
    }
 
    var currentGame: Game!
-   
+   var totalScore: Int = 0
    
    
    // outlets
@@ -38,6 +38,7 @@ class ViewController: UIViewController {
    @IBOutlet weak var scoreLabel: UILabel!
    @IBOutlet var letterButtons: [UIButton]!     // an array of UIButtons?
    @IBOutlet weak var currentRoundScoreLabel: UILabel!
+   @IBOutlet weak var totalScoreLabel: UILabel!
    
    
    //actions
@@ -49,15 +50,9 @@ class ViewController: UIViewController {
       let letter = Character(letterSring.lowercased())
       currentGame.addLetter(letter: letter)
       updateGameState()                      // do the game logic. AdvanceGame() pretty much.
+      
+      
    }
-   
-   
-   /*
-      update the treeImageView.image with each button press
-         if a button pressed corresponds to a correct letter, update the correctWordLabel
-         if a button is pressed that doesn't correspond to a correct letter, update the treeImageView.image and whatever else I need to do...
-    
-   */
    
    
    override func viewDidLoad() {
@@ -76,6 +71,8 @@ class ViewController: UIViewController {
       } else {
          enableLetterButtons(false)
       }
+      // totalScore += currentGame.currentGameScore
+      
    }
    
    func updateUI() {
@@ -93,6 +90,7 @@ class ViewController: UIViewController {
       treeImageView.image = UIImage(named: "Tree \(currentGame.incorrectMovesRemaining)")
       
       currentRoundScoreLabel.text = "Score: \(currentGame.currentGameScore)"
+      totalScoreLabel.text = "\(totalScore)"
       
    }
    
@@ -104,6 +102,8 @@ class ViewController: UIViewController {
       } else {
          updateUI()
       }
+      
+      
    }
    
    func enableLetterButtons(_ enable: Bool) {
