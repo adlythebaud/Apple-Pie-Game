@@ -29,20 +29,26 @@ class ViewController: UIViewController {
    }
 
    var currentGame: Game!
-   var totalScore: Int = 0
-   
+   var currentGamePlayerTwo: Game!
+   let startingPlayer = arc4random_uniform(UInt32(2)) + 1
    
    // outlets
    @IBOutlet weak var treeImageView: UIImageView!
    @IBOutlet weak var correctWordLabel: UILabel!
    @IBOutlet weak var scoreLabel: UILabel!
    @IBOutlet var letterButtons: [UIButton]!     // an array of UIButtons?
-   @IBOutlet weak var currentRoundScoreLabel: UILabel!
-   @IBOutlet weak var totalScoreLabel: UILabel!
+   @IBOutlet weak var playerOneCurrentScore: UILabel!
+   @IBOutlet weak var playerOneTotalWins: UILabel!
+   
+   @IBOutlet weak var playerTwoCurrentScore: UILabel!
+   @IBOutlet weak var playerTwoTotalWins: UILabel!
+   
+   @IBOutlet weak var currentPlayerTurnLabel: UILabel!
+   
    
    
    //actions
-   @IBAction func buttonPressed(_ sender: UIButton) {    // all my buttons have actions linked to this action.
+   @IBAction func buttonPressed(_ sender: UIButton) {    // all my buttons are connected to this action.
       sender.isEnabled = false                           // once that button is pushed, disable it.
       //print(sender.titleLabel)
       
@@ -64,14 +70,18 @@ class ViewController: UIViewController {
    // functions
    func newRound() {
       if !listOfWords.isEmpty {
-         let newWord = listOfWords.removeFirst()      // remove the first word, set it to new word. Next game, this will remove the second word and set it to new word.
+         
+         let newWord = listOfWords.removeFirst()
+         
          currentGame = Game(word: newWord, incorrectMovesRemaining: incorrectGuessesAllowed, guessedLetters: [], currentGameScore: 0)
+         
+         currentGamePlayerTwo = Game(word: newWord, incorrectMovesRemaining: incorrectGuessesAllowed, guessedLetters: [], currentGameScore: 0)
+         
          enableLetterButtons(true)
          updateUI()
       } else {
          enableLetterButtons(false)
       }
-      // totalScore += currentGame.currentGameScore
       
    }
    
@@ -88,16 +98,13 @@ class ViewController: UIViewController {
       correctWordLabel.text = wordWithSpacing
       scoreLabel.text = "Wins: \(totalWins), Losses: \(totalLosses)"
       treeImageView.image = UIImage(named: "Tree \(currentGame.incorrectMovesRemaining)")
-      
-      currentRoundScoreLabel.text = "Score: \(currentGame.currentGameScore)"
-      totalScoreLabel.text = "\(totalScore)"
-      
    }
    
    func updateGameState() {
       if currentGame.incorrectMovesRemaining == 0 {
          totalLosses += 1
       } else if currentGame.formattedWord == currentGame.word {
+         
          totalWins += 1
       } else {
          updateUI()
@@ -112,7 +119,8 @@ class ViewController: UIViewController {
       }
    }
    
-
+      
+   
    override func didReceiveMemoryWarning() {
       super.didReceiveMemoryWarning()
       // Dispose of any resources that can be recreated.
