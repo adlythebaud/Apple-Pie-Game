@@ -13,11 +13,15 @@ struct Game {
    var word: String
    var incorrectMovesRemaining: Int
    var guessedLetters: [Character]
+   var currentGameScore: Int
+   
    mutating func addLetter(letter: Character) {
       guessedLetters.append(letter)
       
       if !word.characters.contains(letter) {
          incorrectMovesRemaining -= 1
+      } else if word.characters.contains(letter) {
+         currentGameScore += 1
       }
    }
    

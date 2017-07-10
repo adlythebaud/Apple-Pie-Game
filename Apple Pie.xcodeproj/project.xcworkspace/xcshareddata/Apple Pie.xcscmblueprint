@@ -5,12 +5,14 @@
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
     "0589332A2AFEEB98F1B4E4B8EA26EC1BF4E79C25" : 9223372036854775807,
-    "C842057BE7443652C99D88F47568BDE9E613B1E7" : 9223372036854775807
+    "C842057BE7443652C99D88F47568BDE9E613B1E7" : 9223372036854775807,
+    "8FE3D83124E7D68A9FB76FD9920B790226EE4871" : 9223372036854775807
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "633AF32A-5965-437F-96AD-272D57F1C7A7",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
     "0589332A2AFEEB98F1B4E4B8EA26EC1BF4E79C25" : "Apple%20Pie\/",
-    "C842057BE7443652C99D88F47568BDE9E613B1E7" : ""
+    "C842057BE7443652C99D88F47568BDE9E613B1E7" : "",
+    "8FE3D83124E7D68A9FB76FD9920B790226EE4871" : "Apple%20Pie\/Apple%20Pie\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "Apple Pie",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
@@ -20,6 +22,11 @@
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/adlythebaud\/Apple-Pie-Game.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "0589332A2AFEEB98F1B4E4B8EA26EC1BF4E79C25"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/adlythebaud\/Apple-Pie-Game.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "8FE3D83124E7D68A9FB76FD9920B790226EE4871"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/adlythebaud\/Apple-Pie-Game.git",

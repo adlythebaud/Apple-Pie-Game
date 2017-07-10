@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
 
+   
+   
    //variables and arrays
    var listOfWords: [String] = ["running", "richard", "pi", "patel"]
    let incorrectGuessesAllowed: Int = 7
@@ -35,6 +37,7 @@ class ViewController: UIViewController {
    @IBOutlet weak var correctWordLabel: UILabel!
    @IBOutlet weak var scoreLabel: UILabel!
    @IBOutlet var letterButtons: [UIButton]!     // an array of UIButtons?
+   @IBOutlet weak var currentRoundScoreLabel: UILabel!
    
    
    //actions
@@ -67,7 +70,7 @@ class ViewController: UIViewController {
    func newRound() {
       if !listOfWords.isEmpty {
          let newWord = listOfWords.removeFirst()      // remove the first word, set it to new word. Next game, this will remove the second word and set it to new word.
-         currentGame = Game(word: newWord, incorrectMovesRemaining: incorrectGuessesAllowed, guessedLetters: [])
+         currentGame = Game(word: newWord, incorrectMovesRemaining: incorrectGuessesAllowed, guessedLetters: [], currentGameScore: 0)
          enableLetterButtons(true)
          updateUI()
       } else {
@@ -76,7 +79,9 @@ class ViewController: UIViewController {
    }
    
    func updateUI() {
+      
       var letters = [String]()
+      
       for letter in currentGame.formattedWord.characters {
          letters.append(String(letter))
       }
@@ -86,6 +91,8 @@ class ViewController: UIViewController {
       correctWordLabel.text = wordWithSpacing
       scoreLabel.text = "Wins: \(totalWins), Losses: \(totalLosses)"
       treeImageView.image = UIImage(named: "Tree \(currentGame.incorrectMovesRemaining)")
+      
+      currentRoundScoreLabel.text = "Score: \(currentGame.currentGameScore)"
       
    }
    
